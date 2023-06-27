@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## commits 
+
+    ### 66. Bind to Custom Property - [property] + @Input
+      <!-- 
+        With : 
+        - Defining the binded data struture by "@Input() element" in the "app-server-element" ts component
+        - Binding the html by "[element]='serverElement'" in the current html component
+        - Defining the content of the serverElements elements in the current ts component 
+        Each serverElement of the current component can be hanled by "app-server-element" component     
+      -->
+      <app-server-element *ngFor="let serverElement of serverElements"
+      [element]='serverElement'></app-server-element>
