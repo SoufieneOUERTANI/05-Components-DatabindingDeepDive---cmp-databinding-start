@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ServerElementComponent {
   // @Input let us to bind a property in oour component from an other component
-  @Input() element: { type: string, name: string, content: string }
+  @Input('srvElement') element: { type: string, name: string, content: string }
 }
