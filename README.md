@@ -38,3 +38,37 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
       -->
       <app-server-element *ngFor="let serverElement of serverElements"
       [element]='serverElement'></app-server-element>
+
+    ### 68. Binding to Custom Events
+      @Output() serverAddedEvent = new EventEmitter<{serverName : string, serverContent : string}>();
+      @Output() blueprintAddedEvent = new EventEmitter<{serverName : string, serverContent : string}>();
+
+      onAddServer() {
+        this.serverAddedEvent.emit({serverName : this.newServerName, serverContent : this.newServerContent});
+      }
+
+      onAddBlueprint() {
+        this.blueprintAddedEvent.emit({serverName : this.newServerName, serverContent : this.newServerContent});
+      }
+
+
+
+      (serverAddedEvent)='onServerAdded($event)'
+      (blueprintAddedEvent)='onBlueprintAdded($event)'
+
+
+      onServerAdded(serverData : {serverName : string, serverContent : string}) {
+        this.serverElements.push({
+          type: 'server',
+          name: serverData.serverName,
+          content: serverData.serverName
+        });
+      }
+
+      onBlueprintAdded(serverData : {serverName : string, serverContent : string}) {
+        this.serverElements.push({
+          type: 'blueprint',
+          name: serverData.serverName,
+          content: serverData.serverName
+        });
+      }
