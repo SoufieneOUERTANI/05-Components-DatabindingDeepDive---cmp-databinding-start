@@ -11,7 +11,7 @@ export class CockpitComponent {
   newServerContent = '';
 
   @Output() serverAddedEvent = new EventEmitter<{serverName : string, serverContent : string}>();
-  @Output() blueprintAddedEvent = new EventEmitter<{serverName : string, serverContent : string}>();
+  @Output('bpCreated') blueprintAddedEvent = new EventEmitter<{serverName : string, serverContent : string}>();
 
   onAddServer() {
     this.serverAddedEvent.emit({serverName : this.newServerName, serverContent : this.newServerContent});
