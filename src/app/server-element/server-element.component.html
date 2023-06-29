@@ -2,9 +2,16 @@
 class="panel panel-default">
 <div class="panel-heading">{{ element.name }}</div>
 <div class="panel-body">
-  <p>
-    <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
-    <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
-  </p>
+  <!-- 
+    C'est une direcvtive qui permet d'indiquer à Angular que 
+    tout contenu inséré entre les balises de ce composant -
+    doit etre placée ici
+  -->
+  <!--   
+    Cette méthiode parait comme une widget 
+    dans laquelle on peut intégrer à chaque fois un différent contenu 
+    voulu par le composant qui appelle ce composant 
+   -->
+  <ng-content></ng-content>
 </div>
 </div>

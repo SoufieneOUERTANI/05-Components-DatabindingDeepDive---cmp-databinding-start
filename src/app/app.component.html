@@ -14,7 +14,18 @@
         Each serverElement of the current component can be hanled by "app-server-element" component     
       -->
       <app-server-element *ngFor="let serverElement of serverElements"
-      [srvElement]='serverElement'></app-server-element>
+      [srvElement]='serverElement'>
+        <!-- 
+          Ce contenu est suceptible d'etre pris en compte dans la seule mesure où 
+          on a indiqué la directive <ng-content></ng-content> dans le compsant d'oriigne "app-server-element"
+          Car sinon n'importe quel contenu inséré entre les balises d'un composant est par défaut ignoré  
+        -->
+        <p>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
+      
+      </app-server-element>
     </div>
   </div>
 </div>
