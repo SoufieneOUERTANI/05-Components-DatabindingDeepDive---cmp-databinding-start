@@ -1,9 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+
+  // Cette propriété est celle par défaut dont la visibilité se resteient au composant
+  // encapsulation:ViewEncapsulation.Emulated
+
+  // ??? 
+  // encapsulation:ViewEncapsulation.ShadowDom
+  
+  // Cette propiété permet de déclarer une visibilité qui s'étend sur toute l'application
+  encapsulation:ViewEncapsulation.None
 })
 export class AppComponent {
   serverElements = [{type : 'server', name :'testServer', content:'Just a test!' }];

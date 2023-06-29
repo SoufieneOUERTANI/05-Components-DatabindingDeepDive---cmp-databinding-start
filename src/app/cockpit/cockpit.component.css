@@ -1,0 +1,4 @@
+/* Cette propriété est ecrasée par la celle déclarée en "encapsulation:ViewEncapsulation.None" dans le compsoant "app-root" */
+.p{
+    color : blueviolet;
+}
