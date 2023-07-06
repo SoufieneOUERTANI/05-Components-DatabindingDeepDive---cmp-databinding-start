@@ -26,6 +26,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Angular Lifecycle Hooks 
+
+  ngOnChanges
+  ngOnInit
+  ngDoCheck
+  ngAfterContentInit
+  ngAfterContentChecked
+  ngAfterViewInit
+  ngAfterViewChecked
+  ngOnDestroy
+
 ## commits 
 
     ### 66. Bind to Custom Property - [property] + @Input
@@ -72,3 +83,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
           content: serverData.serverName
         });
       }
+
+

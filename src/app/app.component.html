@@ -6,6 +6,8 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change first element</button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first Component</button>
       <!-- 
         With : 
         - Defining the binded data struture by "@Input() element" in the "app-server-element" ts component
@@ -14,7 +16,8 @@
         Each serverElement of the current component can be hanled by "app-server-element" component     
       -->
       <app-server-element *ngFor="let serverElement of serverElements"
-      [srvElement]='serverElement'>
+      [srvElement]='serverElement'
+      [name]="serverElement.name">
         <!-- 
           Ce contenu est suceptible d'etre pris en compte dans la seule mesure où 
           on a indiqué la directive <ng-content></ng-content> dans le compsant d'oriigne "app-server-element"
