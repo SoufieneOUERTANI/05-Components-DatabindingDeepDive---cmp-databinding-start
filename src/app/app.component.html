@@ -23,7 +23,7 @@
           on a indiqué la directive <ng-content></ng-content> dans le compsant d'oriigne "app-server-element"
           Car sinon n'importe quel contenu inséré entre les balises d'un composant est par défaut ignoré  
         -->
-        <p>
+        <p #contentParagraph>
           <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
           <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
         </p>
