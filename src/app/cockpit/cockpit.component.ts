@@ -10,24 +10,24 @@ export class CockpitComponent {
   @Output('newBluePrintElementEvent') bluePrintEventEmitter = new EventEmitter<{serverName : string, serverContent : string}>();
 
   newServerName = '';
-  newServerContent = '';
+  // newServerContent = '';
 
-  onAddServer(serverContentValue : string) {
+  onAddServer(serverContent : HTMLInputElement) {
     // this.serverElements.push({
     //   type: 'server',
     //   name: this.newServerName,
     //   content: this.newServerContent
     // });
-    this.serverEventEmitter.emit({serverName :  this.newServerName, serverContent : serverContentValue});
+    this.serverEventEmitter.emit({serverName :  this.newServerName, serverContent : serverContent.value});
   }
 
-  onAddBlueprint(serverContentValue : HTMLInputElement) {
+  onAddBlueprint(serverContentValue : string) {
     // this.serverElements.push({
     //   type: 'blueprint',
     //   name: this.newServerName,
     //   content: this.newServerContent
     // });
-    this.bluePrintEventEmitter.emit({serverName :  this.newServerName, serverContent : serverContentValue.value});
+    this.bluePrintEventEmitter.emit({serverName :  this.newServerName, serverContent : serverContentValue});
   }
 
 }
