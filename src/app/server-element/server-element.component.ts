@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ContentChild, ElementRef, Input, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -11,6 +11,8 @@ export class ServerElementComponent {
   @Input('srvElement') element : { type: string, name : string, content : string};
   @Input() name  : string;
   @ViewChild('heading', {static:true}) header : ElementRef;
+  // @ContentChild is used in thge cas of accessing a reference varibale from *ng-content*   
+  @ContentChild('contentParagraph', {static:true}) paragraph : ElementRef ;
 
   ServerElementComponent(){
     console.log('constructor called');
@@ -24,7 +26,8 @@ export class ServerElementComponent {
 
   ngOnInit(){
     console.log('ngOnInit called');
-    console.log(">>> : "+this.header.nativeElement.textContent);
+    console.log(">>>1 : "+this.header.nativeElement.textContent);
+    console.log(">>>2 : "+this.paragraph.nativeElement.textContent);
   }
 
   ngDoCheck(){
@@ -33,6 +36,7 @@ export class ServerElementComponent {
 
   ngAfterContentInit(){
     console.log('ngAfterContentInit called');
+    console.log(">>>3 : "+this.paragraph.nativeElement.textContent);
   }
 
   ngAfterContentChecked(){
@@ -41,7 +45,7 @@ export class ServerElementComponent {
 
   ngAfterViewInit(){
     console.log('ngAfterViewInit called');
-    console.log(">>> : "+this.header.nativeElement.textContent);
+    console.log(">>>4 : "+this.header.nativeElement.textContent);
   }
 
   ngAfterViewChecked(){
